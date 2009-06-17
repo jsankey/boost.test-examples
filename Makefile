@@ -1,23 +1,14 @@
-TARGET=main
+TARGETS=main hello suites fixtures assertions
 
-$(TARGET): main.cpp
+all: $(TARGETS)
+
+test: $(addprefix run-,$(TARGETS))
+
+%: %.cpp
 	$(CXX) -o$@ -lboost_unit_test_framework $^
 
-hello: hello.cpp
-	$(CXX) -o$@ -lboost_unit_test_framework $^
-
-suites: suites.cpp
-	$(CXX) -o$@ -lboost_unit_test_framework $^
-
-fixtures: fixtures.cpp
-	$(CXX) -o$@ -lboost_unit_test_framework $^
-
-assertions: assertions.cpp
-	$(CXX) -o$@ -lboost_unit_test_framework $^
-
-test: $(TARGET)
-	-./$(TARGET) --output_format=XML --log_level=test_suite > raw-report.xml
-	xmlpretty --PrettyWhiteNewline --PrettyWhiteIndent --CatchEmptyElement raw-report.xml > report.xml
+run-%: %
+	-./$^ --output_format=XML --log_level=test_suite > $(^)-report.xml
 
 clean:
-	rm $(TARGET)
+	rm $(TARGETS) *-report.xml

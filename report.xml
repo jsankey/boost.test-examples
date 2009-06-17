@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestLog>
+  <TestSuite
+      name="PulseTest">
+    <TestSuite
+        name="VariantsSuite">
+      <TestCase
+          name="simplePass">
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="checkFailure">
+        <Error
+            file="main.cpp"
+            line="20">check add(2, 2) == 5 failed
+        </Error>
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="multipleCheckFailures">
+        <Error
+            file="main.cpp"
+            line="25">check add(2, 2) == 1 failed
+        </Error>
+        <Error
+            file="main.cpp"
+            line="26">check add(2, 2) == 2 failed
+        </Error>
+        <Error
+            file="main.cpp"
+            line="27">check add(2, 2) == 3 failed
+        </Error>
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="requireFailure">
+        <FatalError
+            file="main.cpp"
+            line="32">critical check add(2, 2) == 5 failed
+        </FatalError>
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="explicitError">
+        <Error
+            file="main.cpp"
+            line="37">Error message
+        </Error>
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="explicitFailure">
+        <FatalError
+            file="main.cpp"
+            line="42">Failure message
+        </FatalError>
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="errorThenFailure">
+        <FatalError
+            file="main.cpp"
+            line="47">Error message
+        </FatalError>
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="uncaughtException">
+        <Exception
+            name="uncaughtException">C string: Catch me if you can!
+        </Exception>
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="stdException">
+        <Exception
+            name="stdException">unknown type
+        </Exception>
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="checkMessageFailure">
+        <Error
+            file="main.cpp"
+            line="63">add(..) result: 4
+        </Error>
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="checkEqualFailure">
+        <Error
+            file="main.cpp"
+            line="68">check add( 2,2 ) == 5 failed [4 != 5]
+        </Error>
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="threeSeconds">
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+    </TestSuite>
+    <TestSuite
+        name="PassingSuite">
+      <TestCase
+          name="pass1">
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="pass2">
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+      <TestCase
+          name="pass3">
+        <TestingTime>0
+        </TestingTime>
+      </TestCase>
+    </TestSuite>
+  </TestSuite>
+</TestLog>

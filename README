@@ -1,0 +1,62 @@
+========================================================================
+Introduction
+========================================================================
+
+This project includes simple samples illustrating basic use of
+Boost.Test:
+
+http://www.boost.org/doc/libs/1_38_0/libs/test/doc/html/index.html
+
+The samples accompany the tutorial on alittlemadness.com:
+
+http://www.alittlemadness.com/2009/03/31/c-unit-testing-with-boosttest/
+
+========================================================================
+Prerequisites
+========================================================================
+
+The samples assume a Un*x-like environment, and also require:
+
+- a GNU-compatible make (for building)
+- Boost 1.38.0 (possibly later versions, but they are not tested),
+  installed in the system include and library paths.
+
+========================================================================
+Building and Running
+========================================================================
+
+To build the samples, run make:
+
+$ make
+
+This creates five binaries, one for each test sample file.  To
+actually run the tests, use the `test' target:
+
+$ make test
+
+This will execute all of the binaries with arguments to make them
+produce XML output, captured into report-*.xml files.
+
+When you're done, your can remove all built files by cleaning:
+
+$ make clean
+
+========================================================================
+Samples
+========================================================================
+
+hello.cpp:
+A "Hello, World"-style example: the simplest test case.
+
+assertions.cpp:
+Illustrates a higher-level assertion, of which there are several.
+
+suites.cpp:
+Illustrates the simplest way to group test cases into larger suites.
+
+fixtures.cpp:
+Illustrates how to apply common setup and teardown code to multiple
+cases by using a fixture.
+
+main.cpp:
+An all-in-one sample that shows various Boost.Test features.

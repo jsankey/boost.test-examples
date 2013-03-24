@@ -5,7 +5,7 @@ all: $(TARGETS)
 test: $(TARGETS) $(addprefix run-,$(TARGETS))
 
 %: %.cpp
-	$(CXX) -o$@ -lboost_unit_test_framework $^
+	$(CXX) -o$@ $^ -lboost_unit_test_framework
 
 run-%: %
 	-./$^ --output_format=XML --log_level=test_suite > $(^)-report.xml
